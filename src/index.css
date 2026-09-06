@@ -1,0 +1,161 @@
+:root {
+  --color-cream: #FFEFE3;
+  --color-blue: #99C2FF;
+  --color-gold: #FFDF82;
+  --color-pink: #FF84BA;
+  --color-brand-blue: #1868DB;
+  --color-border-blue: #4A7BC7;
+
+  --bg-primary: #FFEFE3;
+  --bg-surface: #99C2FF;
+  --bg-surface-hover: #1868DB;
+  --bg-card: #99C2FF;
+  --bg-input: #FFEFE3;
+  
+  --border-color: #4A7BC7;
+  --border-focus: #1868DB;
+  
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --text-muted: #000000;
+  
+  --accent-primary: #1868DB;
+  --accent-hover: #1153B8;
+  --accent-light: #99C2FF;
+  
+  --danger: #EF4444;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --sidebar-width: 240px;
+  --header-height: 64px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* App Master Layout - Full Width Fluid */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-layout__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.app-layout__main {
+  flex: 1;
+  padding: clamp(16px, 3vw, 32px);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Icon Button Utility for Modal/Toast Close */
+.btn--icon {
+  padding: 8px;
+  border-radius: var(--radius-md);
+  background-color: #1868DB;
+  color: #ffffff;
+  border: 1px solid #1868DB;
+}
+.btn--icon:hover {
+  background-color: #1153B8;
+  color: #ffffff;
+}
+
+/* Shared Page Header */
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.page-header__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.page-header__title {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: #000000;
+}
+
+.page-header__subtitle {
+  color: #000000;
+  font-size: 0.9rem;
+}

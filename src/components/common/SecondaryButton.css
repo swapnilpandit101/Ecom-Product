@@ -1,0 +1,60 @@
+.secondary-button {
+  padding: 10px 20px;
+  min-height: 42px;
+  border-radius: var(--radius-md, 8px);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  background-color: #FFEFE3;
+  color: #000000;
+  border: 1px solid #4A7BC7;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.secondary-button:hover:not(:disabled) {
+  background-color: #1868DB;
+  color: #ffffff;
+  border-color: #1868DB;
+}
+
+.secondary-button:hover:not(:disabled) svg {
+  stroke: #ffffff;
+}
+
+.secondary-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.secondary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondary-button__content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: 1;
+}
+
+.secondary-button svg,
+.secondary-button__content svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.secondary-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

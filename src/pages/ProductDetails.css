@@ -1,0 +1,116 @@
+.product-details-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-details-page__not-found-msg {
+  margin-top: 20px;
+  color: #000000;
+}
+
+.product-details-page__back {
+  margin-bottom: 8px;
+}
+
+.product-details-page__card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(20px, 4vw, 40px);
+  background-color: #99C2FF;
+  border: 1px solid #4A7BC7;
+  border-radius: var(--radius-lg);
+  padding: clamp(16px, 3vw, 32px);
+  margin-bottom: 24px;
+  color: #000000;
+}
+
+.product-details-page__gallery {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: #FFEFE3;
+}
+
+.product-details-page__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-details-page__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-details-page__title {
+  font-size: clamp(1.3rem, 2.5vw, 2.2rem);
+  color: #000000;
+}
+
+.product-details-page__meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-details-page__rating-weight {
+  font-weight: 600;
+  color: #000000;
+}
+
+.product-details-page__badge-static {
+  position: static;
+}
+
+.product-details-page__price-main {
+  font-size: 2rem;
+  color: #000000;
+}
+
+.product-details-page__price-old {
+  font-size: 1.2rem;
+  color: #000000;
+  opacity: 0.8;
+}
+
+.product-details-page__desc {
+  color: #000000;
+  line-height: 1.6;
+}
+
+.product-details-page__perks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid #4A7BC7;
+  border-bottom: 1px solid #4A7BC7;
+}
+
+.product-details-page__perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #000000;
+  font-weight: 500;
+}
+
+.product-details-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.product-details-page__related-section {
+  margin-top: 32px;
+}
+
+.product-details-page__related-title {
+  margin-bottom: 20px;
+  color: #000000;
+}

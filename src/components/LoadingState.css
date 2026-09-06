@@ -1,0 +1,37 @@
+.loading-state__card {
+  padding: 16px;
+}
+
+.loading-state__skeleton {
+  background-color: #4A7BC7;
+  animation: loadingStatePulse 1.2s ease-in-out infinite alternate;
+  border-radius: var(--radius-md);
+}
+
+.loading-state__skeleton--image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 12px;
+}
+
+.loading-state__skeleton--tag {
+  width: 40%;
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.loading-state__skeleton--title {
+  width: 80%;
+  height: 20px;
+  margin-bottom: 12px;
+}
+
+.loading-state__skeleton--price {
+  width: 60%;
+  height: 16px;
+}
+
+@keyframes loadingStatePulse {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}

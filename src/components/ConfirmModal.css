@@ -1,0 +1,20 @@
+.confirm-modal__body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.confirm-modal__icon {
+  padding: 12px;
+  border-radius: 50%;
+  background-color: #EF4444;
+  color: #ffffff;
+}
+
+.confirm-modal__text {
+  color: #000000;
+}
+
+.confirm-modal__footer {
+  margin: 0;
+}
