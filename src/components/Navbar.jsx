@@ -10,7 +10,7 @@ function Navbar({ onToggleMenu, onBrandClick }) {
           onClick={onToggleMenu}
           aria-label="Toggle navigation menu"
         >
-          <Menu size={22} color="#000000" />
+          <Menu size={22} color="#ffffff" />
         </button>
         <div
           className="navbar__brand"

@@ -21,17 +21,25 @@
 
 .navbar__toggle {
   display: none;
-  padding: 8px;
-  border-radius: var(--radius-sm);
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
   color: #ffffff;
-  background-color: #202024;
-  border: 1px solid #27272a;
+  background-color: #27272a;
+  border: 1px solid #3f3f46;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.navbar__toggle:hover {
+.navbar__toggle:hover,
+.navbar__toggle:active {
   background-color: #ff5722;
   border-color: #ff5722;
   color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
 }
 
 .navbar__brand {
@@ -113,17 +121,8 @@
   color: #000000;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .navbar__toggle {
     display: flex;
-  }
-  .navbar__search {
-    display: none;
-  }
-}
-
-@media (min-width: 1024px) {
-  .navbar__toggle {
-    display: none;
   }
 }
