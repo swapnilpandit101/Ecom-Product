@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import MobileNav from './components/MobileNav';
@@ -183,19 +183,36 @@ function App() {
     }
   };
 
+  const handleResetAndGoHome = () => {
+    setSearch('');
+    setCategory('all');
+    handleNavigate('products');
+    window.dispatchEvent(new Event('reset-catalog-filters'));
+  };
+
   return (
     <div className="app-layout">
-      <Sidebar currentRoute={currentRoute} onNavigate={handleNavigate} />
+      <Sidebar
+        currentRoute={currentRoute}
+        onNavigate={handleNavigate}
+        onBrandClick={handleResetAndGoHome}
+        onAddProduct={handleOpenAdd}
+      />
 
       <MobileNav
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
         currentRoute={currentRoute}
         onNavigate={handleNavigate}
+        onBrandClick={handleResetAndGoHome}
+        onAddProduct={handleOpenAdd}
       />
 
       <div className="app-layout__body">
-        <Navbar onToggleMenu={() => setMobileOpen(true)} />
+        <Navbar
+          onToggleMenu={() => setMobileOpen(true)}
+          onBrandClick={handleResetAndGoHome}
+        />
 
         <main className="app-layout__main">
           {renderContent()}

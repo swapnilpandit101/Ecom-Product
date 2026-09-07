@@ -1,4 +1,3 @@
-import React from 'react';
 import { Search, LayoutGrid, List } from 'lucide-react';
 import './ProductFilters.css';
 
@@ -17,7 +16,7 @@ function ProductFilters({
     <div className="product-filters">
       <div className="product-filters__inputs">
         <div className="product-filters__search">
-          <Search size={18} color="#000000" />
+          <Search size={18} color="#9ca3af" />
           <input
             type="text"
             placeholder="Search catalog..."

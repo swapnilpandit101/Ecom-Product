@@ -1,4 +1,3 @@
-import React from 'react';
 import './PrimaryButton.css';
 
 function PrimaryButton({ children, onClick, type = 'button', disabled = false, className = '' }) {

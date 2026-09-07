@@ -1,4 +1,3 @@
-import React from 'react';
 import { AlertCircle, RefreshCw } from 'lucide-react';
 import SecondaryButton from './common/SecondaryButton';
 import './ErrorState.css';

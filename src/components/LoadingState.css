@@ -3,7 +3,7 @@
 }
 
 .loading-state__skeleton {
-  background-color: #4A7BC7;
+  background-color: #27272a;
   animation: loadingStatePulse 1.2s ease-in-out infinite alternate;
   border-radius: var(--radius-md);
 }

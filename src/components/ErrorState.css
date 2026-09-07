@@ -5,11 +5,11 @@
   justify-content: center;
   text-align: center;
   padding: 48px 24px;
-  background-color: #99C2FF;
-  border: 1px solid #4A7BC7;
+  background-color: #18181b;
+  border: 1px solid #27272a;
   border-radius: var(--radius-lg);
   gap: 12px;
-  color: #000000;
+  color: #ffffff;
 }
 
 .error-state__icon {
@@ -25,7 +25,7 @@
 }
 
 .error-state__msg {
-  color: #000000;
+  color: #9ca3af;
 }
 
 .error-state__action {

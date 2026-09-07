@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import ProductFilters from '../components/ProductFilters';
 import ProductGrid from '../components/ProductGrid';
 import Pagination from '../components/Pagination';
@@ -26,8 +26,8 @@ function Products({
   const [sort, setSort] = useState('default');
   const [view, setView] = useState('grid');
   const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
   const [debouncedSearch, setDebouncedSearch] = useState(search);
-  const limit = 10;
 
   // 1. Fetch full category list using custom hook useFetch
   const { data: rawCategories } = useFetch('https://dummyjson.com/products/categories');
@@ -57,10 +57,20 @@ function Products({
     return () => clearTimeout(handler);
   }, [search]);
 
-  // Reset page to 1 when category changes
-  useEffect(() => {
+  const handleCategoryChange = (newCat) => {
+    onCategoryChange(newCat);
     setPage(1);
-  }, [category]);
+  };
+
+  // Reset sort and page on reset-catalog-filters event
+  useEffect(() => {
+    const handleResetFilters = () => {
+      setSort('default');
+      setPage(1);
+    };
+    window.addEventListener('reset-catalog-filters', handleResetFilters);
+    return () => window.removeEventListener('reset-catalog-filters', handleResetFilters);
+  }, []);
 
   // 3. Construct GET URL for Product Catalog server-side API pagination
   const skip = (page - 1) * limit;
@@ -117,7 +127,7 @@ function Products({
         search={search}
         onSearch={onSearchChange}
         category={category}
-        onCategory={onCategoryChange}
+        onCategory={handleCategoryChange}
         sort={sort}
         onSort={setSort}
         view={view}
@@ -153,6 +163,10 @@ function Products({
             totalItems={totalItems}
             limit={limit}
             onPageChange={setPage}
+            onLimitChange={(newLimit) => {
+              setLimit(newLimit);
+              setPage(1);
+            }}
           />
         </>
       )}

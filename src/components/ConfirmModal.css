@@ -9,12 +9,27 @@
   border-radius: 50%;
   background-color: #EF4444;
   color: #ffffff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .confirm-modal__text {
   color: #000000;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 .confirm-modal__footer {
   margin: 0;
 }
+
+@media (max-width: 479px) {
+  .confirm-modal__body {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
+

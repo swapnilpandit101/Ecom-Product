@@ -1,4 +1,3 @@
-import React from 'react';
 import './SecondaryButton.css';
 
 function SecondaryButton({ children, onClick, type = 'button', disabled = false, className = '' }) {

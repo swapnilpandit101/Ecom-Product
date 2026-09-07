@@ -1,12 +1,8 @@
-import React from 'react';
-import { Star, Edit2, Trash2, Eye } from 'lucide-react';
-import PrimaryButton from './common/PrimaryButton';
-import SecondaryButton from './common/SecondaryButton';
-import DangerButton from './common/DangerButton';
+import { Tag, ArrowRight, Edit2, Trash2 } from 'lucide-react';
 import './ProductCard.css';
 
 function ProductCard({ product, onEdit, onDelete, onView }) {
-  const { title, category, price, oldPrice, rating, reviews, stock, status, image } = product;
+  const { title, category, price, rating, stock, status, image, description } = product;
 
   const badgeClass = status === 'in-stock' 
     ? 'product-card__badge--in-stock' 
@@ -16,6 +12,10 @@ function ProductCard({ product, onEdit, onDelete, onView }) {
 
   const badgeLabel = status === 'in-stock' ? 'In Stock' : status === 'low-stock' ? `${stock} left` : 'Out of Stock';
 
+  const categoryName = typeof category === 'string'
+    ? category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, ' ')
+    : 'Offer';
+
   return (
     <div className="product-card">
       <div className="product-card__image-wrap" onClick={() => onView(product)}>
@@ -24,33 +24,50 @@ function ProductCard({ product, onEdit, onDelete, onView }) {
       </div>
 
       <div className="product-card__body">
-        <span className="product-card__category">{category}</span>
+        <div className="product-card__tag-row">
+          <Tag size={15} className="product-card__tag-icon" />
+          <span className="product-card__category">{categoryName}</span>
+        </div>
+
         <h3 className="product-card__title" onClick={() => onView(product)}>
           {title}
         </h3>
 
-        <div className="product-card__rating">
-          <Star size={14} fill="#000000" color="#000000" />
-          <span>{rating}</span>
-          <span className="product-card__reviews">({reviews})</span>
-        </div>
+        <p className="product-card__desc">
+          {description || 'Exclusive store catalog item with guaranteed brand warranty.'}
+        </p>
 
         <div className="product-card__footer">
-          <div className="product-card__price-box">
-            <span className="product-card__price">₹{price.toFixed(2)}</span>
-            {oldPrice && <span className="product-card__old-price">₹{oldPrice.toFixed(2)}</span>}
+          <div className="product-card__brand-info">
+            <img src={image} alt={title} className="product-card__brand-avatar" />
+            <div className="product-card__price-stack">
+              <span className="product-card__price">₹{price ? Number(price).toFixed(2) : '0.00'}</span>
+              <span className="product-card__subtext">★ {rating} • {badgeLabel}</span>
+            </div>
           </div>
 
           <div className="product-card__actions">
-            <SecondaryButton onClick={() => onView(product)} className="product-card__icon-btn">
-              <Eye size={16} />
-            </SecondaryButton>
-            <PrimaryButton onClick={() => onEdit(product)} className="product-card__icon-btn">
-              <Edit2 size={16} />
-            </PrimaryButton>
-            <DangerButton onClick={() => onDelete(product)} className="product-card__icon-btn">
-              <Trash2 size={16} />
-            </DangerButton>
+            <button
+              className="product-card__btn-circle"
+              onClick={() => onEdit(product)}
+              title="Edit Product"
+            >
+              <Edit2 size={14} />
+            </button>
+            <button
+              className="product-card__btn-circle product-card__btn-circle--danger"
+              onClick={() => onDelete(product)}
+              title="Delete Product"
+            >
+              <Trash2 size={14} />
+            </button>
+            <button
+              className="product-card__btn-circle product-card__btn-circle--arrow"
+              onClick={() => onView(product)}
+              title="View Product Details"
+            >
+              <ArrowRight size={16} />
+            </button>
           </div>
         </div>
       </div>
@@ -59,3 +76,4 @@ function ProductCard({ product, onEdit, onDelete, onView }) {
 }
 
 export default ProductCard;
+

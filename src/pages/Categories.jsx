@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import {
   Sparkles,
   Flame,
@@ -41,18 +41,20 @@ function Categories({ onSelectCategory }) {
     });
   }, [data]);
 
-  // Palette of light card backgrounds and matching dark icon backgrounds
-  const cardColorPalettes = [
-    { bgLight: '#E6F0FF', darkIconBg: '#1868DB' }, // Blue theme
-    { bgLight: '#F3E8FF', darkIconBg: '#7C3AED' }, // Violet theme
-    { bgLight: '#FFE6F2', darkIconBg: '#DB2777' }, // Pink theme
-    { bgLight: '#E6F9F3', darkIconBg: '#059669' }, // Emerald theme
-    { bgLight: '#FFF2E6', darkIconBg: '#D97706' }, // Amber theme
-    { bgLight: '#FFEBE8', darkIconBg: '#DC2626' }, // Red theme
-    { bgLight: '#EEF2FF', darkIconBg: '#4F46E5' }, // Indigo theme
-    { bgLight: '#E6F7F8', darkIconBg: '#0D9488' }, // Teal theme
-    { bgLight: '#FAF5FF', darkIconBg: '#9333EA' }, // Purple theme
-    { bgLight: '#E0F2FE', darkIconBg: '#0284C7' }  // Sky theme
+  // Vibrant colors for the right vertical tab ribbons matching the screenshot
+  const tabColors = [
+    '#f59e0b', // 1: Warm Amber
+    '#f97316', // 2: Coral / Orange
+    '#8d6e63', // 3: Taupe / Warm Brown
+    '#10b981', // 4: Emerald Green
+    '#06b6d4', // 5: Cyan / Teal
+    '#1e65b8', // 6: Deep Blue
+    '#5c6bc0', // 7: Slate / Indigo Blue
+    '#8b5cf6', // 8: Purple / Violet
+    '#ec4899', // 9: Vibrant Pink
+    '#0284c7', // 10: Sky Blue
+    '#14b8a6', // 11: Mint
+    '#e11d48'  // 12: Rose
   ];
 
   // Helper to select relevant icon based on category ID/slug
@@ -85,7 +87,7 @@ function Categories({ onSelectCategory }) {
       </div>
 
       {loading ? (
-        <LoadingState count={4} />
+        <LoadingState count={6} />
       ) : error ? (
         <ErrorState
           title="Categories Unavailable"
@@ -96,35 +98,37 @@ function Categories({ onSelectCategory }) {
         <div className="categories-page__grid">
           {categories.map((cat, index) => {
             const Icon = getCategoryIcon(cat.id);
-            const palette = cardColorPalettes[index % cardColorPalettes.length];
+            const tabColor = tabColors[index % tabColors.length];
+            const badgeNumber = index + 1;
 
             return (
               <div
                 key={cat.id}
                 className="categories-page__card"
-                style={{ backgroundColor: palette.bgLight }}
                 onClick={() => onSelectCategory(cat.id)}
               >
-                <div className="categories-page__card-top">
-                  <span className="product-card__category">Category</span>
-                  <div
-                    className="categories-page__card-icon"
-                    style={{ backgroundColor: palette.darkIconBg, borderColor: palette.darkIconBg }}
-                  >
-                    <Icon size={22} color="#ffffff" />
+                <div className="categories-page__card-main">
+                  <div className="categories-page__card-icon">
+                    <Icon size={20} />
+                  </div>
+
+                  <h3 className="categories-page__card-title">{cat.name.toUpperCase()}</h3>
+
+                  <p className="categories-page__card-desc">
+                    Explore top quality products in {cat.name} department with live API sync and real-time inventory metrics.
+                  </p>
+
+                  <div className="categories-page__card-action">
+                    <span>View Catalog</span>
+                    <ArrowRight size={14} />
                   </div>
                 </div>
 
-                <h3>{cat.name}</h3>
-
-                <div className="categories-page__card-meta">
-                  <span className="categories-page__count-text">Department Catalog</span>
-                  <span className="categories-page__sales-text">Active</span>
-                </div>
-
-                <div className="categories-page__card-action">
-                  <span>View Catalog</span>
-                  <ArrowRight size={14} color="#000000" />
+                <div
+                  className="categories-page__card-tab"
+                  style={{ backgroundColor: tabColor }}
+                >
+                  <span className="categories-page__card-number">{badgeNumber}</span>
                 </div>
               </div>
             );

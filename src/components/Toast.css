@@ -2,9 +2,9 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: #1868DB;
-  border: 1px solid #1868DB;
-  border-left: 4px solid #1868DB;
+  background-color: #1e1e22;
+  border: 1px solid #27272a;
+  border-left: 4px solid #ff5722;
   border-radius: var(--radius-md);
   padding: 14px 20px;
   box-shadow: var(--shadow-lg);

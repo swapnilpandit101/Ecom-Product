@@ -1,7 +1,7 @@
 .navbar {
   height: var(--header-height);
-  background-color: #99C2FF;
-  border-bottom: 1px solid #4A7BC7;
+  background-color: #141417;
+  border-bottom: 1px solid #27272a;
   padding: 0 clamp(16px, 3vw, 32px);
   display: flex;
   align-items: center;
@@ -23,11 +23,14 @@
   display: none;
   padding: 8px;
   border-radius: var(--radius-sm);
-  color: #000000;
+  color: #ffffff;
+  background-color: #202024;
+  border: 1px solid #27272a;
 }
 
 .navbar__toggle:hover {
-  background-color: #1868DB;
+  background-color: #ff5722;
+  border-color: #ff5722;
   color: #ffffff;
 }
 
@@ -38,7 +41,22 @@
   font-family: 'Outfit', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #000000;
+  color: #ffffff;
+  transition: opacity 0.2s ease;
+}
+
+.navbar__brand:hover {
+  opacity: 0.85;
+}
+
+.navbar__brand-badge {
+  background-color: #ff5722;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(255, 87, 34, 0.3);
 }
 
 /* Task 1 Sub-Navbar Navigation Tabs */

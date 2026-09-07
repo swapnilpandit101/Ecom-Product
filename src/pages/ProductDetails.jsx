@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import ProductGrid from '../components/ProductGrid';
 import LoadingState from '../components/LoadingState';
@@ -21,7 +21,7 @@ function ProductDetails({ product: initialProduct, productId, onNavigate, onEdit
     ? `https://dummyjson.com/products/${targetId}`
     : null;
 
-  const { data: rawProductData, loading: productLoading, error: productError, refetch } = useFetch(productUrl);
+  const { data: rawProductData, loading: productLoading, error: productError } = useFetch(productUrl);
 
   const product = useMemo(() => {
     if (rawProductData) {
@@ -114,7 +114,7 @@ function ProductDetails({ product: initialProduct, productId, onNavigate, onEdit
 
           <div className="product-details-page__meta-row">
             <div className="product-card__rating">
-              <Star size={16} fill="#000000" color="#000000" />
+              <Star size={16} fill="#f59e0b" color="#f59e0b" />
               <span className="product-details-page__rating-weight">{rating}</span>
               <span className="product-card__reviews">({reviews} customer reviews)</span>
             </div>
@@ -132,15 +132,15 @@ function ProductDetails({ product: initialProduct, productId, onNavigate, onEdit
 
           <div className="product-details-page__perks">
             <div className="product-details-page__perk-item">
-              <Truck size={18} color="#000000" />
+              <Truck size={18} color="#ff5722" />
               <span>Free express shipping on orders over ₹499</span>
             </div>
             <div className="product-details-page__perk-item">
-              <ShieldCheck size={18} color="#000000" />
+              <ShieldCheck size={18} color="#ff5722" />
               <span>2 Year Official Brand Warranty included</span>
             </div>
             <div className="product-details-page__perk-item">
-              <RefreshCw size={18} color="#000000" />
+              <RefreshCw size={18} color="#ff5722" />
               <span>30-Day Hassle-Free Returns</span>
             </div>
           </div>

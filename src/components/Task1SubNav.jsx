@@ -1,4 +1,3 @@
-import React from 'react';
 import { Package, FolderTree, Search } from 'lucide-react';
 import './Task1SubNav.css';
 

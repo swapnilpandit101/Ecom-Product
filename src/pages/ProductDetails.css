@@ -6,7 +6,7 @@
 
 .product-details-page__not-found-msg {
   margin-top: 20px;
-  color: #000000;
+  color: #ffffff;
 }
 
 .product-details-page__back {
@@ -17,12 +17,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: clamp(20px, 4vw, 40px);
-  background-color: #99C2FF;
-  border: 1px solid #4A7BC7;
+  background-color: #18181b;
+  border: 1px solid #27272a;
   border-radius: var(--radius-lg);
   padding: clamp(16px, 3vw, 32px);
   margin-bottom: 24px;
-  color: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .product-details-page__gallery {
@@ -30,7 +31,8 @@
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background-color: #FFEFE3;
+  background-color: #202024;
+  border: 1px solid #27272a;
 }
 
 .product-details-page__image {
@@ -47,18 +49,19 @@
 
 .product-details-page__title {
   font-size: clamp(1.3rem, 2.5vw, 2.2rem);
-  color: #000000;
+  color: #ffffff;
 }
 
 .product-details-page__meta-row {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .product-details-page__rating-weight {
   font-weight: 600;
-  color: #000000;
+  color: #ffffff;
 }
 
 .product-details-page__badge-static {
@@ -67,17 +70,18 @@
 
 .product-details-page__price-main {
   font-size: 2rem;
-  color: #000000;
+  color: #ff5722;
+  font-weight: 700;
 }
 
 .product-details-page__price-old {
   font-size: 1.2rem;
-  color: #000000;
-  opacity: 0.8;
+  color: #71717a;
+  text-decoration: line-through;
 }
 
 .product-details-page__desc {
-  color: #000000;
+  color: #d4d4d8;
   line-height: 1.6;
 }
 
@@ -86,8 +90,8 @@
   flex-direction: column;
   gap: 10px;
   padding: 16px 0;
-  border-top: 1px solid #4A7BC7;
-  border-bottom: 1px solid #4A7BC7;
+  border-top: 1px solid #27272a;
+  border-bottom: 1px solid #27272a;
 }
 
 .product-details-page__perk-item {
@@ -95,7 +99,7 @@
   align-items: center;
   gap: 10px;
   font-size: 0.9rem;
-  color: #000000;
+  color: #d4d4d8;
   font-weight: 500;
 }
 
@@ -112,5 +116,26 @@
 
 .product-details-page__related-title {
   margin-bottom: 20px;
-  color: #000000;
+  color: #ffffff;
 }
+
+@media (max-width: 639px) {
+  .product-details-page__card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 479px) {
+  .product-details-page__actions {
+    flex-direction: column;
+  }
+  .product-details-page__actions > button {
+    width: 100%;
+  }
+  .product-details-page__price-main {
+    font-size: 1.6rem;
+  }
+}
+

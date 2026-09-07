@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   gap: 8px;
   font-size: 0.85rem;
-  color: #000000;
+  color: #9ca3af;
   margin-bottom: 12px;
 }
 
@@ -15,14 +15,16 @@
 }
 
 .breadcrumbs__link {
-  color: #000000;
+  color: #9ca3af;
+  transition: color 0.2s ease;
 }
 
 .breadcrumbs__link:hover {
-  color: #1868DB;
+  color: #ff5722;
 }
 
 .breadcrumbs__active {
-  color: #000000;
-  font-weight: 700;
+  color: #ffffff;
+  font-weight: 600;
 }
+

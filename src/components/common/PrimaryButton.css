@@ -5,9 +5,9 @@
   font-weight: 600;
   font-size: 0.95rem;
   line-height: 1;
-  background-color: #059669;
+  background-color: #ff5722;
   color: #ffffff;
-  border: 1px solid #059669;
+  border: 1px solid #ff5722;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -19,8 +19,8 @@
 }
 
 .primary-button:hover:not(:disabled) {
-  background-color: #047857;
-  border-color: #047857;
+  background-color: #f4511e;
+  border-color: #f4511e;
 }
 
 .primary-button:active:not(:disabled) {

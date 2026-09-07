@@ -1,4 +1,3 @@
-import React from 'react';
 import './DangerButton.css';
 
 function DangerButton({ children, onClick, type = 'button', disabled = false, className = '' }) {

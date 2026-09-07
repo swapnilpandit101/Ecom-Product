@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import PrimaryButton from './common/PrimaryButton';
 import SecondaryButton from './common/SecondaryButton';
 import useFetch from '../hooks/useFetch';

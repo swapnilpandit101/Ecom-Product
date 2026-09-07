@@ -1,4 +1,3 @@
-import React from 'react';
 import { PackageX } from 'lucide-react';
 import PrimaryButton from './common/PrimaryButton';
 import './EmptyState.css';

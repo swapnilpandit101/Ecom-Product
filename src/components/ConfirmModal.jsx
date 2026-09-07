@@ -1,4 +1,3 @@
-import React from 'react';
 import Modal from './Modal';
 import SecondaryButton from './common/SecondaryButton';
 import DangerButton from './common/DangerButton';

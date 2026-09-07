@@ -5,27 +5,28 @@
   justify-content: center;
   text-align: center;
   padding: 48px 24px;
-  background-color: #99C2FF;
-  border: 1px solid #4A7BC7;
+  background-color: #18181b;
+  border: 1px solid #27272a;
   border-radius: var(--radius-lg);
   gap: 12px;
-  color: #000000;
+  color: #ffffff;
 }
 
 .empty-state__icon {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-color: #1868DB;
+  background-color: #ff5722;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
 }
 
 .empty-state__msg {
-  color: #000000;
+  color: #9ca3af;
   max-width: 400px;
 }
 

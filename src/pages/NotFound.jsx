@@ -1,5 +1,4 @@
-import React from 'react';
-import { Home, Compass } from 'lucide-react';
+import { Compass, Home } from 'lucide-react';
 import PrimaryButton from '../components/common/PrimaryButton';
 import './NotFound.css';
 

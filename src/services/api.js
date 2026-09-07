@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { clearFetchCache } from '../hooks/useFetch';
 
 // Centralized Axios Instance with Base URL
 const api = axios.create({
@@ -23,6 +24,7 @@ export const invalidateApiCache = () => {
   productsPromises.clear();
   categoriesCache = null;
   categoriesPromise = null;
+  clearFetchCache();
 };
 
 /**
@@ -174,7 +176,7 @@ export const updateProduct = async (id, payload) => {
   try {
     const response = await api.put(`/products/${id}`, apiPayload);
     return normalizeProduct({ ...payload, ...response.data, id });
-  } catch (err) {
+  } catch {
     try {
       const patchRes = await api.patch(`/products/${id}`, apiPayload);
       return normalizeProduct({ ...payload, ...patchRes.data, id });

@@ -5,9 +5,9 @@
   font-weight: 600;
   font-size: 0.95rem;
   line-height: 1;
-  background-color: #FFEFE3;
-  color: #000000;
-  border: 1px solid #4A7BC7;
+  background-color: #202024;
+  color: #ffffff;
+  border: 1px solid #27272a;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -19,9 +19,9 @@
 }
 
 .secondary-button:hover:not(:disabled) {
-  background-color: #1868DB;
+  background-color: #ff5722;
   color: #ffffff;
-  border-color: #1868DB;
+  border-color: #ff5722;
 }
 
 .secondary-button:hover:not(:disabled) svg {
